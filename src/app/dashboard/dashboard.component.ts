@@ -1,24 +1,25 @@
 import { Component, OnInit } from '@angular/core';
-import { Hero } from "../hero";
+import { User } from "../User";
 import { HeroService } from "../hero.service";
 import { HeroSearchService } from "../hero-search.service";
-
+import { UserService } from '../user.service';
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
   styleUrls: ['dashboard.component.scss'],
-  providers: [HeroSearchService]
+  providers: [UserService]
 })
 export class DashboardComponent implements OnInit {
 
-  heroes: Hero[] = [];
+  heroes: User[] = [];
 
-  constructor(private heroService: HeroService) { }
+  constructor(private userService: UserService) { }
 
   ngOnInit(): void {
-    console.log('init');
-    this.heroService.getHeroes().
-      then(heroes => this.heroes = heroes.slice(1, 5));
+    this.userService.getAllUser().
+      then(heroes => {
+        console.log(heroes);
+        this.heroes = heroes.slice(0, 5)});
   }
 
 }
