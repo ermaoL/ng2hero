@@ -17,6 +17,11 @@ import { AppRoutingModule } from "./app-routing.module";
 import { CoreModule } from './core/core.module';
 import { DashboardModule } from './dashboard/dashboard.module';
 
+/**
+ * services
+ */
+import { AuthGuard } from './guards/auth-guard.service';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,7 +32,7 @@ import { DashboardModule } from './dashboard/dashboard.module';
     CoreModule.forRoot({userName: ""}),
     AppRoutingModule
   ],
-  providers: [],
+  providers: [AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

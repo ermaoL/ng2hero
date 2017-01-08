@@ -17,7 +17,7 @@ export class DashboardComponent implements OnInit {
     this.userService.getAllUser().
       then(heroes => {
         console.log(heroes);
-        this.heroes = heroes.slice(0, 5)});
+        this.heroes = heroes.slice(0, 10)});
   }
 
 }
