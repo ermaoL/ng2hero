@@ -24,7 +24,7 @@ import { DashboardModule } from './dashboard/dashboard.module';
   imports: [
     BrowserModule,
     DashboardModule,
-    CoreModule.forRoot({userName: "hhahahhah"}),
+    CoreModule.forRoot({userName: ""}),
     AppRoutingModule
   ],
   providers: [],
