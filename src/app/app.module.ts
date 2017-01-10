@@ -20,8 +20,8 @@ import { DashboardModule } from './dashboard/dashboard.module';
 /**
  * services
  */
-import { AuthGuard } from './guards/auth-guard.service';
-
+import { AuthGuard } from './auth/auth-guard.service';
+import { TokenService } from './auth/token.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,9 +30,9 @@ import { AuthGuard } from './guards/auth-guard.service';
     BrowserModule,
     DashboardModule,
     CoreModule.forRoot({userName: ""}),
-    AppRoutingModule
+    AppRoutingModule,
   ],
-  providers: [AuthGuard],
+  providers: [AuthGuard, TokenService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
