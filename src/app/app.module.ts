@@ -16,12 +16,8 @@ import { AppRoutingModule } from "./app-routing.module";
  */
 import { CoreModule } from './core/core.module';
 import { DashboardModule } from './dashboard/dashboard.module';
+import { AuthModule } from './auth/auth.module';
 
-/**
- * services
- */
-import { AuthGuard } from './auth/auth-guard.service';
-import { TokenService } from './auth/token.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,10 +25,11 @@ import { TokenService } from './auth/token.service';
   imports: [
     BrowserModule,
     DashboardModule,
-    CoreModule.forRoot({userName: ""}),
+    CoreModule.forRoot({userName: "haha"}),
+    AuthModule.forRoot(),
     AppRoutingModule,
   ],
-  providers: [AuthGuard, TokenService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
