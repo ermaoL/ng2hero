@@ -10,4 +10,6 @@ import { SharedModule } from '../shared/shared.module'
     declarations: [DashboardComponent],
     providers: [],
 })
-export class DashboardModule { }
+export class DashboardModule {
+    
+}

@@ -9,12 +9,10 @@ export class AuthGuard implements CanActivate {
 
     canActivate(){
         let token = this._tokenService.getToken();
-        // console.log(token.getExpirationDate());
-        // console.log(token.isExpired());
+        console.log(token.isExpired());
         if(token && token.token) {
             return !token.isExpired();
         }
-
         return false;
     }
 }

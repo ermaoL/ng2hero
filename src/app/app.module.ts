@@ -26,7 +26,14 @@ import { AuthModule } from './auth/auth.module';
     BrowserModule,
     DashboardModule,
     CoreModule.forRoot({userName: "haha"}),
-    AuthModule.forRoot(),
+    AuthModule.forRoot({noTokenScheme: true, headerName: 'token', guards: {
+      loggedInGuard: {
+        redirectUrl: 'dashboard'
+      },
+      loggedOutGuard: {
+        redirectUrl: 'login'
+      }
+    }}),
     AppRoutingModule,
   ],
   providers: [],

@@ -22,12 +22,10 @@ export class LoginComponent implements OnInit {
     login(){
         this._http.post(this.loginurl, {username: this.username, password: this.password})
         .toPromise().then((res) => {
-            // console.log(res.json());
             if(res.json().success){
                 this._tokenService.setToken(res.json().token);
                 this._router.navigate(['dashboard']);
             }
         })
-        // console.log(this.username, this.password)
     }
 }
