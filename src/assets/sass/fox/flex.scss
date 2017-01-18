@@ -1,0 +1,13 @@
+.fox-flex{
+    display: flex;
+
+    &.all-center{
+        justify-content: center;
+        align-items: center;
+    }
+
+    &.fox-wrap{
+        flex-wrap: wrap;
+    }
+}
+

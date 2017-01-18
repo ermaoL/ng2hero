@@ -18,9 +18,12 @@ import { CoreModule } from './core/core.module';
 import { DashboardModule } from './dashboard/dashboard.module';
 import { AuthModule } from './auth/auth.module';
 
+import { SiderComponent } from './sider/sider.component';
+
 @NgModule({
   declarations: [
     AppComponent,
+    SiderComponent
   ],
   imports: [
     BrowserModule,
