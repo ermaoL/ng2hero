@@ -1,4 +1,17 @@
-<div class="article" *ngFor="let article of articles">
-    <p>{{article.title}}</p>
-    <div class="content">{{article.content}}</div>
-</div>
+<table>
+    <thead>
+        <tr>
+            <th>编号</th>
+            <th>标题</th>
+            <th>内容</th>
+        </tr> 
+    </thead>
+    <tbody>
+        <tr class="article" *ngFor="let article of articles; let i = index;">
+            <td>{{i}}</td>
+            <td>{{article.title}}</td>
+            <td class="content">{{article.content}}</td>
+        </tr>
+    </tbody>
+      
+</table>
