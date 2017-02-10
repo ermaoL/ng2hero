@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from "../models/User";
-import { UserService } from '../user.service';
+import { UserService } from '../services/user.service';
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
@@ -19,7 +19,8 @@ export class DashboardComponent implements OnInit {
     this.userService.getAllUser().
       then(heroes => {
         console.log(heroes);
-        this.heroes = heroes.slice(0, 10)}).catch((err)=>{
+        this.heroes = heroes.slice(0, 10)})
+        .catch((err)=>{
             console.log(err);
         });
   }

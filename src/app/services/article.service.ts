@@ -1,25 +1,25 @@
 import {Injectable} from '@angular/core';
 import {Http} from "@angular/http";
-import {User} from "./models/User";
+import {Article} from "../models/Article";
 import {Observable} from "rxjs";
 import 'rxjs/add/operator/toPromise';
 
-import { AuthHttp } from './auth/auth.http';
+import { AuthHttp } from '../auth/auth.http';
 
 @Injectable()
-export class UserService {
+export class ArticleService {
 
-  private heroesUrl = 'http://localhost:3000/api/users';
+  private artilcesUrl = 'http://localhost:3000/api/articles';
 
   constructor(private http: AuthHttp) {
   }
 
-  getAllUser(): Promise<User[]> {
-    return this.http.get(this.heroesUrl)
+  getAllArticle(): Promise<Article[]> {
+    return this.http.get(this.artilcesUrl )
       .toPromise()
       .then(response => {
         console.log(response.json())
-        return response.json().users as User[]})
+        return response.json().articles as Article[]})
       .catch((err)=>{
           console.log(err.json());
       });

@@ -14,6 +14,10 @@ const routes: Routes = [
     loadChildren: 'app/login/login.module#LoginModule'
   },
   {
+    path: 'article',
+    loadChildren: 'app/article/article.module#ArticleModule'
+  },
+  {
     path: '',
     redirectTo: 'dashboard',
     pathMatch: 'full'
