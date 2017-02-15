@@ -1,12 +1,20 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnChanges, SimpleChanges } from '@angular/core';
 
 @Component({
     selector: 'sider',
     styleUrls: ['sider.component.scss'],
-    templateUrl: 'sider.component.html'
+    templateUrl: 'sider.component.html',
+    providers: [ ]
 })
 export class SiderComponent implements OnInit {
     constructor() { }
 
-    ngOnInit() { }
+    loggedIn: boolean = false;
+    ngOnInit() {
+        
+    }
+
+    ngOnChanges(changes: SimpleChanges){
+        console.log(changes);
+    }
 }

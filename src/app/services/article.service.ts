@@ -9,13 +9,13 @@ import { AuthHttp } from '../auth/auth.http';
 @Injectable()
 export class ArticleService {
 
-  private artilcesUrl = 'http://localhost:3000/api/articles';
+  private artilcesUrl = 'http://localhost:3000/articles';
 
   constructor(private http: AuthHttp) {
   }
 
   getAllArticle(): Promise<Article[]> {
-    return this.http.get(this.artilcesUrl )
+    return this.http.get(this.artilcesUrl)
       .toPromise()
       .then(response => {
         console.log(response.json())

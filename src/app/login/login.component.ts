@@ -12,7 +12,7 @@ export class LoginComponent implements OnInit {
 
     username: string;
     password: string;
-    loginurl: string = 'http://localhost:3000/api/login';
+    loginurl: string = 'http://localhost:3000/login';
 
     constructor(private _http: Http, private _tokenService: TokenService, private _router: Router) { }
 

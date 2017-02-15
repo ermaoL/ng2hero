@@ -9,7 +9,7 @@ import { AuthHttp } from '../auth/auth.http';
 @Injectable()
 export class UserService {
 
-  private heroesUrl = 'http://localhost:3000/api/users';
+  private heroesUrl = 'http://localhost:3000/users';
 
   constructor(private http: AuthHttp) {
   }
