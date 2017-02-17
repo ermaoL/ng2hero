@@ -18,7 +18,7 @@ export class CoreModule {
         }
     }
 
-    static forRoot(config: UserServiceConfig):ModuleWithProviders {
+    static forRoot(config?: UserServiceConfig):ModuleWithProviders {
         return {
             ngModule: CoreModule,
             providers: [

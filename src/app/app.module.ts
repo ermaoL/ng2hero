@@ -1,5 +1,6 @@
 import { BrowserModule } from "@angular/platform-browser";
 import { NgModule } from "@angular/core";
+import { MaterialRootModule } from '@angular/material';
 
 /**
  * App Root
@@ -19,7 +20,6 @@ import { DashboardModule } from './dashboard/dashboard.module';
 import { AuthModule } from './auth/auth.module';
 
 import { SiderComponent } from './sider/sider.component';
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,6 +28,7 @@ import { SiderComponent } from './sider/sider.component';
   imports: [
     BrowserModule,
     DashboardModule,
+    MaterialRootModule,
     CoreModule.forRoot({userName: "haha"}),
     AuthModule.forRoot(),
     AppRoutingModule,
