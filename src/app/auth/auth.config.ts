@@ -14,51 +14,44 @@ export interface IAuthConfig {
     }
 }
 
-
-export class AuthConfig{
-    public globalHeaders: Array<Object>;
-    public headerName: string;
-    public headerPrefix: string;
-    public noJwtError: boolean;
-    public noTokenScheme: boolean;
-    public guards: {
+const AuthConfigDefaults: IAuthConfig = {
+    globalHeaders: [],
+    headerName: 'Authorization',
+    headerPrefix: '',
+    noJwtError: false,
+    noTokenScheme: false,
+    guards: {
         loggedInGuard: {
-            redirectUrl: string;
+            redirectUrl: 'dashboard'
         },
         loggedOutGuard: {
-            redirectUrl: string;
-        },
+            redirectUrl: 'login'
+        }
     }
-    
-    constructor(config: any = {}){
-        this.globalHeaders = config.globalHeaders || [];
-        this.headerName = config.headerName || 'Authorization';
+};
 
-        if(config.headerPrefix) {
-            this.headerPrefix = config.headerPrefix;
-        } else if (config.noTokenScheme) {
-            this.headerPrefix = '';
+
+export class AuthConfig{
+    private _config: IAuthConfig;
+    
+    constructor(config?: IAuthConfig){
+        config = config || {};
+        console.log(config);
+        this._config = Object.assign({}, AuthConfigDefaults, config);
+        
+        console.log(this._config);
+        if(this._config.headerPrefix) {
+            console.log('-1312')
+            this._config.headerPrefix = config.headerPrefix;
+        } else if (this._config.noTokenScheme) {
+            this._config.headerPrefix = '';
         } else {
-            this.headerPrefix = 'Bearer ';
+            this._config.headerPrefix = 'Bearer ';
         }
         
-        this.noJwtError = config.noJwtError || false;
-        this.noTokenScheme = config.noTokenScheme || false;
-
-        this.guards = {
-            loggedInGuard: (config.guards && config.guards.loggedInGuard) || { redirectUrl: null },
-            loggedOutGuard: (config.guards && config.guards.loggedOutGuard) || { redirectUrl: null }
-        };
     }
 
     public getConfig(): IAuthConfig {
-        return {
-            globalHeaders: this.globalHeaders,
-            headerName: this.headerName,
-            headerPrefix: this.headerPrefix,
-            noJwtError: this.noJwtError,
-            noTokenScheme: this.noTokenScheme,
-            guards: this.guards
-        };
+        return this._config;
     }
 }

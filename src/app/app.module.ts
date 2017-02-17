@@ -29,14 +29,7 @@ import { SiderComponent } from './sider/sider.component';
     BrowserModule,
     DashboardModule,
     CoreModule.forRoot({userName: "haha"}),
-    AuthModule.forRoot({noTokenScheme: true, headerName: 'token', guards: {
-      loggedInGuard: {
-        redirectUrl: 'dashboard'
-      },
-      loggedOutGuard: {
-        redirectUrl: 'login'
-      }
-    }}),
+    AuthModule.forRoot(),
     AppRoutingModule,
   ],
   providers: [],

@@ -14,6 +14,7 @@ export class AuthHttp {
     constructor(options: AuthConfig, private _tokenService: TokenService, private _http: Http, private _options: RequestOptions) {
         this.config = options.getConfig();
         console.log('auth http init');
+        console.log(this.config);
         console.log(_tokenService);
     }
 

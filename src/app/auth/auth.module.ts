@@ -8,6 +8,18 @@ import { TokenService } from '../auth/token.service';
 import { AuthHttp } from '../auth/auth.http';
 import { AuthConfig, IAuthConfig } from '../auth/auth.config';
 
+export function authHttpFactory(tokenService: TokenService, http: Http,     options: RequestOptions){
+        return new AuthHttp(new AuthConfig({noTokenScheme: true, headerName: 'token', guards: {
+      loggedInGuard: {
+        redirectUrl: 'dashboard'
+      },
+      loggedOutGuard: {
+        redirectUrl: 'login'
+      }
+    }}), tokenService, http, options);
+    }
+
+
 @NgModule({
     imports: [CommonModule, HttpModule],
     exports: [],
@@ -19,18 +31,16 @@ export class AuthModule {
         return {
             ngModule: AuthModule,
             providers: [
-                TokenService,
                 {
                     provide: AuthHttp,
-                    useFactory: (tokenService: TokenService, http: Http, options: RequestOptions) => {
-                        return new AuthHttp(new AuthConfig(config), tokenService, http, options);
-                    },
+                    useFactory: authHttpFactory,
                     deps: [
                         TokenService,
                         Http,
-                        RequestOptions
+                        RequestOptions,
                     ]
-                }
+                },
+                {provide: AuthConfig, useValue: config}
             ]
         }
     }
