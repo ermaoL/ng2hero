@@ -5,11 +5,11 @@ import {Observable} from "rxjs";
 import 'rxjs/add/operator/toPromise';
 
 import { AuthHttp } from '../auth/auth.http';
-
+import { articlesUrl } from './api';
 @Injectable()
 export class ArticleService {
 
-  private artilcesUrl = 'http://localhost:3000/articles';
+  private artilcesUrl = articlesUrl;
 
   constructor(private http: AuthHttp) {
   }

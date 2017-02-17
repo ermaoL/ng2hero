@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Http } from '@angular/http';
 import { Router } from '@angular/router';
 import { TokenService } from '../auth/token.service';
-
+import { loginUrl } from '../services/api';
 @Component({
     selector: 'login',
     templateUrl: './login.component.html',
@@ -12,7 +12,7 @@ export class LoginComponent implements OnInit {
 
     username: string;
     password: string;
-    loginurl: string = 'http://localhost:3000/login';
+    loginurl: string = loginUrl;
 
     constructor(private _http: Http, private _tokenService: TokenService, private _router: Router) { }
 
