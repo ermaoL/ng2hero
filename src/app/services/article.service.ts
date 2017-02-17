@@ -18,10 +18,8 @@ export class ArticleService {
     return this.http.get(this.artilcesUrl)
       .toPromise()
       .then(response => {
-        console.log(response.json())
         return response.json().articles as Article[]})
       .catch((err)=>{
-          console.log(err.json());
       });
   }
 }

@@ -18,10 +18,8 @@ export class UserService {
     return this.http.get(this.heroesUrl)
       .toPromise()
       .then(response => {
-        console.log(response.json())
         return response.json().users as User[]})
       .catch((err)=>{
-          console.log(err.json());
       });
   }
 }

@@ -7,7 +7,7 @@ export class TokenService {
     private _token: BehaviorSubject<Token>;
     constructor() { 
         this._token = <BehaviorSubject<Token>>new BehaviorSubject(new Token(localStorage.getItem('auth_token')));
-        console.log('TokenService init')
+        
     }
 
     getToken(): Token{
@@ -19,7 +19,6 @@ export class TokenService {
     }
 
     setToken(token: string){
-        console.log('set Token');
         this._token.next(new Token(token));
         localStorage.setItem('auth_token', token);
     }

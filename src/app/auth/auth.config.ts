@@ -36,12 +36,9 @@ export class AuthConfig{
     
     constructor(config?: IAuthConfig){
         config = config || {};
-        console.log(config);
         this._config = Object.assign({}, AuthConfigDefaults, config);
         
-        console.log(this._config);
         if(this._config.headerPrefix) {
-            console.log('-1312')
             this._config.headerPrefix = config.headerPrefix;
         } else if (this._config.noTokenScheme) {
             this._config.headerPrefix = '';

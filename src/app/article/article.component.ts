@@ -16,10 +16,8 @@ export class ArticleComponent implements OnInit {
     ngOnInit() {
         this._articleService.getAllArticle()
         .then(articles=>{
-            console.log(articles);
             this.articles = articles;
         }).catch(err=>{
-            console.log(err);
         }) 
     }
 }

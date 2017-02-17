@@ -40,7 +40,6 @@ export class Token {
 
     public getExpirationDate(): Date{
         let decoded = this.decodeToken();
-        console.log(decoded);
         if(!decoded.hasOwnProperty('exp')) {
             return new Date();
         }

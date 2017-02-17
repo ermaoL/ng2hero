@@ -15,6 +15,5 @@ export class SiderComponent implements OnInit {
     }
 
     ngOnChanges(changes: SimpleChanges){
-        console.log(changes);
     }
 }
