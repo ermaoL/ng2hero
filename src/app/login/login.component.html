@@ -1,27 +1,26 @@
 <div class="login fox-flex all-center" >
-    <md-tab-group>
-        <md-tab label="登录">
-            <form (ngSubmit)="login()" name="form" #f="ngForm" class="fox-flex all-center fox-wrap" novalidate>
-                <md-input-container>
-                    <input type="text" mdInput placeholder="用户名" name="username" [(ngModel)]="username" class="fox-block">
-                </md-input-container>
-                <md-input-container>
-                    <input type="password" mdInput placeholder="密码" name="password" [(ngModel)]="password" class="fox-block">
-                </md-input-container>
-                <button md-button>登录</button>
-            </form>        
-        </md-tab>
-        <md-tab label="注册">
-            <form (ngSubmit)="signup()" name="form" #f1="ngForm" class="fox-flex all-center fox-wrap" novalidate>
-                <md-input-container>
-                    <input type="text" mdInput placeholder="用户名" name="username" [(ngModel)]="username" class="fox-block">
-                </md-input-container>
-                <md-input-container>
-                    <input type="password" mdInput placeholder="密码" name="password" [(ngModel)]="password" class="fox-block">
-                </md-input-container>
-                <button md-button>注册</button>
-            </form>       
-        </md-tab>
-    </md-tab-group>
-    
+    <tabs>
+      <tab tabTitle="登录">
+        <form (ngSubmit)="login()" name="form" #f="ngForm" class="fox-flex all-center fox-wrap" novalidate>
+          <md-input-container>
+            <input type="text" mdInput placeholder="用户名" name="username" [(ngModel)]="username" class="fox-block">
+          </md-input-container>
+          <md-input-container>
+            <input type="password" mdInput placeholder="密码" name="password" [(ngModel)]="password" class="fox-block">
+          </md-input-container>
+          <button md-button>登录</button>
+        </form>
+      </tab>
+      <tab tabTitle="注册">
+        <form (ngSubmit)="signup()" name="form" #f1="ngForm" class="fox-flex all-center fox-wrap" novalidate>
+          <md-input-container>
+            <input type="text" mdInput placeholder="用户名" name="username" [(ngModel)]="username" class="fox-block">
+          </md-input-container>
+          <md-input-container>
+            <input type="password" mdInput placeholder="密码" name="password" [(ngModel)]="password" class="fox-block">
+          </md-input-container>
+          <button md-button>注册</button>
+        </form>
+      </tab>
+    </tabs>
 </div>

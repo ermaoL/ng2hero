@@ -17,7 +17,7 @@ import { AppRoutingModule } from "./app-routing.module";
  */
 import { CoreModule } from './core/core.module';
 import { DashboardModule } from './dashboard/dashboard.module';
-import { AuthModule } from './auth/auth.module';
+import { AuthModule } from './auth';
 
 import { SiderComponent } from './sider/sider.component';
 @NgModule({
