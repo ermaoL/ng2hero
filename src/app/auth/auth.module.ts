@@ -2,11 +2,13 @@ import {NgModule, ModuleWithProviders} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {HttpModule, Http, RequestOptions} from '@angular/http';
 
-import {AuthGuard}   from '../auth/auth-guard.service';
-import {TokenService} from '../auth/token.service';
+import {AuthGuard}   from './auth-guard.service';
+import {TokenService} from './token.service';
 
-import {AuthHttp} from '../auth/auth.http';
-import {AuthConfig, IAuthConfig} from '../auth/auth.config';
+import {AuthHttp} from './auth.http';
+import {AuthConfig, IAuthConfig} from './auth.config';
+
+import { Token } from './token.model';
 
 export function authHttpFactory(tokenService: TokenService, http: Http, options: RequestOptions) {
   return new AuthHttp(new AuthConfig({
@@ -49,4 +51,4 @@ export class AuthModule {
 }
 
 
-export {TokenService, AuthGuard, AuthHttp};
+export {TokenService, AuthGuard, AuthHttp, Token};

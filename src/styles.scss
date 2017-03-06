@@ -1,2 +1,7 @@
-@import './assets/sass/reset.scss';
+@import "../node_modules/normalize.css";
+@import "./assets/sass/reset";
 @import './assets/sass/fox.scss';
+
+body{
+  padding: 10px;
+}

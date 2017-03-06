@@ -1,7 +1,7 @@
 declare function escape(s:string): string;
 
 export class TokenError extends Error {
-    
+
     name = "TokenError";
 
     constructor(message: string) {
@@ -26,7 +26,7 @@ export class Token {
         return decodeURIComponent(escape(typeof window === 'undefined' ? atob(output) : window.atob(output)));
     }
 
-    private decodeToken(): any{
+    public decodeToken(): any{
         let parts = this.token.split('.');
         if(parts.length != 3) {
             throw new TokenError('A JWT Token must have 3 parts!');
