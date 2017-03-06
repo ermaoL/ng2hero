@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Http } from '@angular/http';
 import { Router } from '@angular/router';
-import { TokenService } from '../auth/token.service';
+import { TokenService } from '../auth';
 import { loginUrl } from '../services/api';
 @Component({
     selector: 'login',

@@ -1,4 +1,4 @@
-import { Component, OnInit, OnChanges, SimpleChanges } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
     selector: 'sider',
@@ -11,9 +11,7 @@ export class SiderComponent implements OnInit {
 
     loggedIn: boolean = false;
     ngOnInit() {
-        
+
     }
 
-    ngOnChanges(changes: SimpleChanges){
-    }
 }

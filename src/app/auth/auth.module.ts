@@ -21,7 +21,6 @@ export function authHttpFactory(tokenService: TokenService, http: Http, options:
   }), tokenService, http, options);
 }
 
-export {TokenService};
 
 @NgModule({
   imports: [CommonModule, HttpModule],
@@ -48,3 +47,6 @@ export class AuthModule {
     }
   }
 }
+
+
+export {TokenService, AuthGuard, AuthHttp};
