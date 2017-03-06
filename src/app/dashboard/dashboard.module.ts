@@ -3,13 +3,14 @@ import { HttpModule } from '@angular/http';
 
 import { DashboardComponent }   from './dashboard.component';
 import { DashBoardRoutingModule } from './dashboard-routing.module';
-import { SharedModule } from '../shared/shared.module'
+import { SharedModule } from '../shared/shared.module';
+import { ArticleComponent } from'./article/article.component';
 @NgModule({
     imports: [ SharedModule, HttpModule, DashBoardRoutingModule ],
     exports: [],
-    declarations: [DashboardComponent],
+    declarations: [DashboardComponent, ArticleComponent],
     providers: [],
 })
 export class DashboardModule {
-    
+
 }

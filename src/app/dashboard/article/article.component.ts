@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
-import { ArticleService } from '../services/article.service'
-import { Article } from '../models/Article'
+import { ArticleService } from '../../services/article.service'
+import { Article } from '../../models/Article'
 @Component({
     selector: 'article',
     templateUrl: 'article.component.html',
@@ -18,6 +18,6 @@ export class ArticleComponent implements OnInit {
         .then(articles=>{
             this.articles = articles;
         }).catch(err=>{
-        }) 
+        })
     }
 }
