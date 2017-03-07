@@ -1,20 +1,29 @@
 import {Component, OnInit} from "@angular/core";
-import { AuthService } from './services/auth.service'
+import {AuthService} from "./services/auth.service";
+import {UserService} from "./core/user.service";
+
 
 @Component({
   selector: 'app-root',
   template: `
-  <router-outlet></router-outlet>
-`,
+    <banner></banner>
+    <router-outlet></router-outlet>
+  `,
   styleUrls: ['./app.component.scss'],
-  providers: [AuthService]
+  providers: [AuthService],
 })
-export class AppComponent implements OnInit{
+export class AppComponent implements OnInit {
 
-    constructor(private _authService: AuthService){}
+  constructor(private _authService: AuthService, private  _user: UserService) {
+  }
 
-    loggedIn: boolean = false;
-    ngOnInit(){
-        this.loggedIn = this._authService.loggedIn();
-    }
+  loggedIn: boolean = false;
+  username: string;
+
+  ngOnInit() {
+    console.log('ngOnInit');
+    this.loggedIn = this._authService.loggedIn();
+    this.username = this._user.userName;
+  }
+
 }

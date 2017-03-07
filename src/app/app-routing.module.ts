@@ -13,6 +13,10 @@ const routes: Routes = [
     loadChildren: 'app/login/login.module#LoginModule'
   },
   {
+    path: 'article',
+    loadChildren: 'app/login/login.module#LoginModule'
+  },
+  {
     path: '**',
     redirectTo: 'login',
     pathMatch: 'full'

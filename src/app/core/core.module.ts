@@ -5,13 +5,14 @@ import { UserService } from './user.service';
 import { UserServiceConfig } from './user.service';
 
 import { TitleComponent } from './title.component';
+
 @NgModule({
     imports: [ CommonModule ],
     exports: [ TitleComponent ],
     declarations: [ TitleComponent ],
     providers: [ UserService ],
 })
-export class CoreModule { 
+export class CoreModule {
     constructor(@Optional() @SkipSelf() parentModule: CoreModule){
         if(parentModule) {
             throw new Error('CoreModule is already loaded. Import it in the AppModule only');

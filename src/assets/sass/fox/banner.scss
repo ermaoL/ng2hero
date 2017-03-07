@@ -1,0 +1,33 @@
+.fox-banner{
+  width: 100%;
+  height: 50px;
+  line-height: 50px;
+  vertical-align: middle;
+  background-color: #000000;
+  color: #ffffff;
+  padding: 0 40px;
+  .brand{
+
+  }
+
+  ul{
+    list-style-type: none;
+    display: inline-block;
+    li{
+      float: left;
+      padding: 0 20px;
+      height: 100%;
+      display: block;
+      cursor: pointer;
+      a{
+        &:hover{
+          color: #ccff33;
+        }
+        &.active{
+          color: #ccff33;
+        }
+      }
+
+    }
+  }
+}

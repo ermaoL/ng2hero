@@ -5,12 +5,13 @@ import { Observable, BehaviorSubject } from 'rxjs';
 @Injectable()
 export class TokenService {
     private _token: BehaviorSubject<Token>;
-    constructor() { 
+    constructor() {
         this._token = <BehaviorSubject<Token>>new BehaviorSubject(new Token(localStorage.getItem('auth_token')));
-        
+
     }
 
     getToken(): Token{
+        console.log(this._token);
         return this._token.getValue();
     }
 

@@ -5,6 +5,7 @@ import { NgModule } from "@angular/core";
  * App Root
  */
 import { AppComponent } from "./app.component";
+import { BannerComponent } from './components/banner/banner.component';
 
 /**
  * Routing Module
@@ -17,19 +18,20 @@ import { AppRoutingModule } from "./app-routing.module";
 import { CoreModule } from './core/core.module';
 import { DashboardModule } from './dashboard/dashboard.module';
 import { AuthModule } from './auth';
-
+import { UserService } from './services/user.service';
 @NgModule({
   declarations: [
     AppComponent,
+    BannerComponent
   ],
   imports: [
     BrowserModule,
     DashboardModule,
-    CoreModule.forRoot({userName: "haha"}),
+    CoreModule.forRoot(),
     AuthModule.forRoot(),
     AppRoutingModule,
   ],
-  providers: [],
+  providers: [UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
