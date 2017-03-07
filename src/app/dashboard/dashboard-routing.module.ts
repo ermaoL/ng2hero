@@ -15,12 +15,10 @@ const routes: Routes = [
       {
         path: 'user',
         component: UserComponent,
-        outlet: 'dashboard'
       },
       {
         path: 'article',
         component: ArticleComponent,
-        outlet: 'dashboard'
       }
     ]
   }
