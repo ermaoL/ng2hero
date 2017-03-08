@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Http } from '@angular/http';
 import { Router } from '@angular/router';
 import { TokenService } from '../auth';
-import { loginUrl } from '../services/api';
+import { loginUrl, signUrl } from '../services/api';
 @Component({
     selector: 'login',
     templateUrl: './login.component.html',
@@ -11,8 +11,11 @@ import { loginUrl } from '../services/api';
 export class LoginComponent implements OnInit {
 
     username: string;
+    username1: string;
     password: string;
+    password1: string;
     loginurl: string = loginUrl;
+    signurl: string = signUrl;
 
     constructor(private _http: Http, private _tokenService: TokenService, private _router: Router) { }
 
@@ -30,6 +33,12 @@ export class LoginComponent implements OnInit {
     }
 
     signup(){
-
+        this._http.post(this.signurl, {username: this.username1, password: this.password1})
+        .toPromise().then((res) => {
+            if(res.json().success){
+                this._tokenService.setToken(res.json().token);
+                this._router.navigate(['dashboard']);
+            }
+        })
     }
 }
