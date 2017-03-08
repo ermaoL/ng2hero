@@ -21,7 +21,6 @@ export class AppComponent implements OnInit {
   username: string;
 
   ngOnInit() {
-    console.log('ngOnInit');
     this.loggedIn = this._authService.loggedIn();
     this.username = this._user.userName;
   }

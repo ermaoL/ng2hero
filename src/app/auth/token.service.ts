@@ -11,7 +11,6 @@ export class TokenService {
     }
 
     getToken(): Token{
-        console.log(this._token);
         return this._token.getValue();
     }
 

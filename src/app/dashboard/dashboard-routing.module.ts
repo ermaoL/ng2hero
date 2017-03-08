@@ -19,6 +19,7 @@ const routes: Routes = [
       {
         path: 'article',
         component: ArticleComponent,
+        pathMatch: 'full'
       }
     ]
   }

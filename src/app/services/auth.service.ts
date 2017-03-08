@@ -21,7 +21,6 @@ export class AuthService {
         let token = this._tokenService.getToken();
 
         if(token && token.token) {
-            console.log(!token.isExpired());
             return !token.isExpired();
         }
 
