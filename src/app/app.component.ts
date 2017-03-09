@@ -8,6 +8,7 @@ import {UserService} from "./core/user.service";
   template: `
     <banner></banner>
     <router-outlet></router-outlet>
+    <loading></loading>
   `,
   styleUrls: ['./app.component.scss'],
   providers: [AuthService],

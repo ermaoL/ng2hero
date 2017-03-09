@@ -31,8 +31,14 @@ export class AuthHttp {
         if (additionalOptions) {
             options = options.merge(additionalOptions);
         }
-
-        return this.request(new Request(this.mergeOptions(options, this._options)));
+        let obs = this.request(new Request(this.mergeOptions(options, this._options)));
+        // obs.subscribe(null, (err) => {
+        //   console.log('出错啦');
+        //   console.log(err);
+        // }, ()=>{
+        //   console.log("终结啦")
+        // });
+        return obs;
     }
 
     public setGlobalHeaders(headers: Array<Object>, request: Request | RequestOptionsArgs) {
