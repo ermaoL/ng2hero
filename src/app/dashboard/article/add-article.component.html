@@ -1,0 +1,7 @@
+<div class="add-article">
+  <input type="text" placeholder="title" [(ngModel)]="title">
+  <textarea name="" id="" cols="30" rows="10" [(ngModel)]="content"></textarea>
+  <div [innerHtml]="content|marked"></div>
+
+  <button (click)="addArticle(title, content)">新增</button>
+</div>

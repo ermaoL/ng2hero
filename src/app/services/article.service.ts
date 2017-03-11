@@ -21,4 +21,12 @@ export class ArticleService {
       .catch((err) => {
       });
   }
+
+  addArticle(obj): Promise<any>{
+    return this.http.post(this.artilcesUrl, obj)
+      .toPromise()
+      .then(response => {
+          return response.json();
+      });
+  }
 }

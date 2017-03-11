@@ -7,6 +7,7 @@ import { AuthGuard } from '../auth';
 
 import { UserComponent } from './user/user.component';
 import { ArticleComponent } from './article/article.component';
+import { AddArticleComponent } from './article/add-article.component';
 const routes: Routes = [
   { path: '',
     component: DashboardComponent,
@@ -19,7 +20,11 @@ const routes: Routes = [
       {
         path: 'article',
         component: ArticleComponent,
-        pathMatch: 'full'
+        pathMatch: 'full',
+      },
+      {
+        path: 'article/add',
+        component: AddArticleComponent,
       }
     ]
   }
