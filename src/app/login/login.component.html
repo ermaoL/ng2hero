@@ -1,18 +1,30 @@
-<div class="login fox-flex all-center" >
-    <tabs>
-      <tab tabTitle="登录">
-        <form (ngSubmit)="login()" name="form" #f="ngForm" class="fox-flex all-center fox-wrap" novalidate>
-            <input type="text" placeholder="用户名" name="username" [(ngModel)]="username" class="fox-block">
-            <input type="password" placeholder="密码" name="password" [(ngModel)]="password" class="fox-block">
-          <button >登录</button>
-        </form>
-      </tab>
-      <tab tabTitle="注册">
-        <form (ngSubmit)="signup()" name="form1" #f1="ngForm" class="fox-flex all-center fox-wrap" novalidate>
-            <input type="text" placeholder="用户名" name="username1" [(ngModel)]="username1" class="fox-block">
-            <input type="password" placeholder="密码" name="password1" [(ngModel)]="password1" class="fox-block">
-          <button>注册</button>
-        </form>
-      </tab>
-    </tabs>
+<div class="login fox-flex all-center">
+  <tabs>
+    <tab tabTitle="登录">
+      <form (ngSubmit)="login()" name="form" #f="ngForm" class="fox-flex all-center fox-wrap" novalidate>
+        <div class="form-group">
+          <input type="text" placeholder="用户名" name="username" [(ngModel)]="username" class="form-control">
+        </div>
+        <div class="form-group">
+          <input type="password" placeholder="密码" name="password" [(ngModel)]="password" class="form-control">
+        </div>
+        <div class="form-group">
+          <button class="primary">登录</button>
+        </div>
+      </form>
+    </tab>
+    <tab tabTitle="注册">
+      <form (ngSubmit)="signup()" name="form1" #f1="ngForm" class="fox-flex all-center fox-wrap" novalidate>
+        <div class="form-group">
+          <input type="text" placeholder="用户名" name="username1" [(ngModel)]="username1" class="form-control">
+        </div>
+        <div class="form-group">
+          <input type="password" placeholder="密码" name="password1" [(ngModel)]="password1" class="form-control">
+        </div>
+        <div class="form-group">
+          <button class="primary">注册</button>
+        </div>
+      </form>
+    </tab>
+  </tabs>
 </div>

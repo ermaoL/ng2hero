@@ -1,0 +1,61 @@
+@mixin generateClass($class, $color){
+  &.#{$class}{
+    @if(lightness($color) > 50) {
+      color: #000000;
+    } @else{
+      color: #ffffff;
+    }
+    background: $color;
+    border-color: $color;
+    &:hover{
+      background-color: darken($color, 10%);
+      border-color: darken($color, 10%);
+    }
+  }
+}
+
+$themes: (
+  "primary": #0099FF,
+  "secondary": #CCCCCC,
+  "success": #00FF99,
+  "info": #00CCFF,
+  "warning": #FF9900,
+  "danger": #FF0033,
+);
+
+button, .fox-btn {
+  outline: none;
+  display: inline-block;
+  font-weight: 400;
+  line-height: 1.25;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  //文本不能被选择
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+
+  border: 1px solid transparent;
+  padding: .5rem 1rem;
+  font-size: 1rem;
+  -webkit-border-radius: .25rem;
+  -moz-border-radius: .25rem;
+  border-radius: .25rem;
+  -webkit-transition: all .2s ease-in-out;
+  -moz-transition: all .2s ease-in-out;
+  -ms-transition: all .2s ease-in-out;
+  -o-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+  cursor: pointer;
+
+  @each $key, $value in $themes{
+    @include generateClass($key, $value);
+  }
+
+
+
+}
+
+

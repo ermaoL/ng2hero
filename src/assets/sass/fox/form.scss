@@ -1,0 +1,26 @@
+.form-control{
+  outline: none;
+  display: block;
+  width: 100%;
+  padding: .5rem .75rem;
+  font-size: 1rem;
+  color: #444444;
+  background: #fff none;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  border: 1px solid rgba(0, 0, 0, .15);
+  -webkit-border-radius: .2rem;
+  -moz-border-radius: .2rem;
+  border-radius: .2rem;
+
+  &:focus{
+    color: #444444;
+    background-color: #ffffff;
+    border-color: #0099FF;
+    outline: 0;
+  }
+}
+
+.form-group{
+  margin-bottom: 1rem;
+}

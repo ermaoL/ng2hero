@@ -1,20 +1,17 @@
-form{
-    max-width: 300px;
-    // padding-bottom: 100px;
-    button{
-        margin: 10px 5px 0;
-    }
+form {
+  width: 300px;
+  display: block;
 }
 
-.login{
-    height: 100%;
+.login {
+  height: 100%;
 }
 
-.mat-input-container{
-    display: block;
-    width:  100%;
+.mat-input-container {
+  display: block;
+  width: 100%;
 }
 
-.mat-tab-header{
-    margin-bottom: 20px;
+.mat-tab-header {
+  margin-bottom: 20px;
 }

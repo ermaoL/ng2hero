@@ -1,7 +1,13 @@
 <div class="add-article">
-  <input type="text" placeholder="title" [(ngModel)]="title">
-  <textarea name="" id="" cols="30" rows="10" [(ngModel)]="content"></textarea>
+  <div class="form-group">
+    <input type="text" placeholder="文章标题" [(ngModel)]="title" class="form-control">
+  </div>
+  <div class="form-group">
+    <textarea name="" id="" cols="30" rows="10" placeholder="文章正文" [(ngModel)]="content" class="form-control"></textarea>
+  </div>
+
   <div [innerHtml]="content|marked"></div>
 
-  <button (click)="addArticle(title, content)">新增</button>
+  <button (click)="addArticle(title, content)" class="primary">新增</button>
+
 </div>

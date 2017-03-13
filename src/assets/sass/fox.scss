@@ -2,50 +2,16 @@
 @import "./fox/flex";
 @import "./fox/tabs";
 @import "./fox/banner";
+@import "./fox/button";
+@import "./fox/table";
+@import "./fox/form";
 
 form{
     width: 100%;
 }
 
-input{
-   border: 1px solid transparent;
-   outline: none;
-   padding: 10px;
-   margin: 10px;
-   font-size: 14px;
-   border-radius: 4px;
-
-   &:focus{
-       border: 1px solid #ccff33;
-   }
-   &.fox-block{
-       display: block;
-       width: 100%;
-   }
+div{
+    overflow: hidden;
 }
 
-button{
-    outline: none;
-    padding: 5px;
-    background-color: transparent;
-    border: 1px solid #0080d0;
-    border-radius: 4px;
-    color: #0080d0;
-    width: 100px;
-    cursor: pointer;
 
-    &:hover{
-        color: #ccff33;
-        border-color: #ccff33;
-    }
-}
-
-table{
-    width: 100%;
-    border-collapse: collapse;
-    th, td{
-        text-align: center;
-        border: 1px solid #dddddd;
-        padding: 10px;
-    }
-}
