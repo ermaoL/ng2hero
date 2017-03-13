@@ -1,0 +1,7 @@
+<div class="article-detail">
+  <h1>{{article && article.title || ""}}</h1>
+  <p><span>作者: {{article && article.user.username}}</span></p>
+  <p><span>创建于: {{article && article.createdAt | date: 'yyyy-MM-dd'}}</span></p>
+  <div class="article-content" [innerHtml]="article && article.content|marked">
+  </div>
+</div>

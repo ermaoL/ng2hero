@@ -1,1 +1,9 @@
-文章
+<div class="article">
+  <div class="list">
+    <div class="article-item" *ngFor="let article of articles">
+      <a [routerLink]="['/article', article._id]" routerLinkActive="active"> {{article.title}}</a>
+      <span class="user">作者: {{article.user && article.user.username || ""}}</span>
+      <span>创建于: {{article.createdAt | date:'yyyy-MM-dd' }}</span>
+    </div>
+  </div>
+</div>
