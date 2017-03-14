@@ -1,11 +1,17 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, Input} from '@angular/core';
 
 @Component({
-    selector: 'banner',
-    templateUrl: 'banner.component.html'
+  selector: 'banner',
+  templateUrl: 'banner.component.html'
 })
 export class BannerComponent implements OnInit {
-    constructor() { }
 
-    ngOnInit() { }
+  @Input() loggedIn: boolean;
+  @Input() isAdmin: boolean;
+  constructor() {
+  }
+
+  ngOnInit() {
+  }
+
 }

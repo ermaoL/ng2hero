@@ -1,7 +1,7 @@
 <div class="fox-banner">
   <div class="brand"></div>
   <ul>
-    <li>
+    <li *ngIf="loggedIn && isAdmin">
       <a routerLink="/dashboard" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">dashboard</a>
     </li>
     <li>
