@@ -13,15 +13,25 @@ import { InterceptorService } from './interceptor.service';
   right: 0;
   bottom: 0;
   left: 0;
-  background-color: rgba(0,0,0,.5);
+  background-color: rgba(255,255,255,.5);
   color: #ffffff;
   text-align: center; 
 }
 .loading p {
+  width: 100px;
+  height: 100px;
+  line-height: 100px;
+  vertical-align: middle;
+  border-radius: 8px;
+  background-color: #000000;
   position: absolute;
   top: 50%;
   left: 50%;
-  -webkit-transform: translate(-50%, -50%);-moz-transform: translate(-50%, -50%);-ms-transform: translate(-50%, -50%);-o-transform: translate(-50%, -50%);transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
 }
 `
     ]

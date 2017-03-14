@@ -49,7 +49,10 @@ button, .fox-btn {
   -o-transition: all .2s ease-in-out;
   transition: all .2s ease-in-out;
   cursor: pointer;
-
+  &.block{
+    display: block;
+    width: 100%;
+  }
   @each $key, $value in $themes{
     @include generateClass($key, $value);
   }

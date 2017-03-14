@@ -7,7 +7,7 @@ import {Component, OnInit, Input} from '@angular/core';
 export class BannerComponent implements OnInit {
 
   @Input() loggedIn: boolean;
-  @Input() isAdmin: boolean;
+  @Input() user;
   constructor() {
   }
 

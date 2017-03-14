@@ -23,12 +23,12 @@ export class LoginComponent implements OnInit {
 
 
     login(){
-        console.log('1111');
         this._http.post(this.loginurl, {username: this.username, password: this.password})
         .toPromise().then((res) => {
             if(res.json().success){
                 this._tokenService.setToken(res.json().token);
-                this._router.navigate(['dashboard']);
+                this._router.navigate(['article']);
+            }else{
             }
         })
     }
@@ -39,7 +39,7 @@ export class LoginComponent implements OnInit {
             console.log(res.json());
             if(res.json().success){
                 this._tokenService.setToken(res.json().token);
-                this._router.navigate(['dashboard']);
+                this._router.navigate(['article']);
             }else{
                 alert(res.json().message);
             }

@@ -72,19 +72,19 @@ export class myHttp extends Http{
       this._interceptor.beforeRequest.emit("开始啦");
 
       observable.subscribe(res => {
-        console.log('获取到数据');
-        console.log(res);
         this._interceptor.afterRequest.emit("结束");
+        if(!res.json().success){
+          alert(res.json().message);
+        }
         observer.next(res);
       }, (err) => {
-        console.log('错误啦');
+        if(!err.json().success){
+          alert(err.json().message);
+        }
         this._interceptor.afterRequest.emit("结束");
-
         observer.error(err);
       }, ()=> {
-        console.log('完成啦');
         this._interceptor.afterRequest.emit("结束");
-
         observer.complete();
       })
     });

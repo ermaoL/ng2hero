@@ -7,15 +7,15 @@
   height: 50px;
   line-height: 50px;
   vertical-align: middle;
+  margin-bottom: 20px;
   li{
     flex: 1;
     text-align: center;
-    background-color: #0f0f0f;
-    color: #ffffff;
+    color: #333333;
     cursor: pointer;
     &.active{
-      color: #ccff33;
-      border-bottom: 1px solid #ccff33;
+      color: #0099FF;
+      border-bottom: 1px solid #0099FF
     }
   }
 }

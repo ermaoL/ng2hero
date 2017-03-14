@@ -1,11 +1,18 @@
 <div class="fox-banner">
   <div class="brand"></div>
   <ul>
-    <li *ngIf="loggedIn && isAdmin">
+    <li *ngIf="loggedIn && user.admin">
       <a routerLink="/dashboard" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">dashboard</a>
     </li>
     <li>
       <a routerLink="/article" routerLinkActive="active" >文章</a>
+    </li>
+
+    <li *ngIf="!loggedIn" class="pull-right">
+      <a routerLink="/login" routerLinkActive="active">登录</a>
+    </li>
+    <li *ngIf="loggedIn" class="pull-right">
+      <a [routerLink]="['u', user.username]" routerLinkActive="active">{{user.username}}</a>
     </li>
   </ul>
 </div>
