@@ -16,7 +16,6 @@ export class AppComponent implements OnInit, DoCheck {
     this.loggedIn = this._authService.loggedIn();
     if(this.loggedIn) {
       this.user = this._authService.getUserInfo().user;
-      console.log(this.user);
     }else{
       this.user = {};
     }

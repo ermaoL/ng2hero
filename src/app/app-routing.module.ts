@@ -16,6 +16,10 @@ const routes: Routes = [
     loadChildren: 'app/login/login.module#LoginModule',
   },
   {
+    path: 'u',
+    loadChildren: 'app/u/u.module#UModule',
+  },
+  {
     path: '',
     redirectTo: 'article',
     pathMatch: 'full'
