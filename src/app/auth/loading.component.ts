@@ -44,7 +44,7 @@ export class LoadingComponent implements OnInit {
 
     ngOnInit() {
       this._interceptor.beforeRequest.subscribe(data => {
-        console.log(data);
+        // console.log(data);
         this.isLoading = true;
       });
 

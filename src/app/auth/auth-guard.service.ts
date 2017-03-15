@@ -1,26 +1,28 @@
-import { Injectable } from '@angular/core';
-import { CanActivate, Router } from '@angular/router';
+import {Injectable} from '@angular/core';
+import {CanActivate, Router, ActivatedRouteSnapshot, RouterStateSnapshot} from '@angular/router';
 
-import { TokenService } from './token.service';
+import {TokenService} from './token.service';
+import {Observable} from "rxjs";
+
 @Injectable()
 export class AuthGuard implements CanActivate {
 
-    constructor(private _tokenService: TokenService, private _router: Router) { }
 
-    canActivate(){
-        let token = this._tokenService.getToken();
-        if(token && token.token) {
-            if(token.isExpired()){
-                this._router.navigate(['login']);
-            }
-            let user = this._tokenService.getToken().decodeToken().user;
-            console.log(user);
-            console.log(!token.isExpired() && user.admin);
-            return !token.isExpired() && user.admin;
-        }
+  constructor(private _tokenService: TokenService, private _router: Router) {
+  }
 
+  canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
+    let token = this._tokenService.getToken();
+    if (token && token.token) {
+      if (token.isExpired()) {
         this._router.navigate(['login']);
-
-        return false;
+      }
+      //token没过期
+      return !token.isExpired();
     }
+
+    this._router.navigate(['login']);
+
+    return false;
+  }
 }

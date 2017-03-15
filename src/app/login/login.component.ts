@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Http } from '@angular/http';
 import { Router } from '@angular/router';
-import { TokenService, AuthHttp, myHttp } from '../auth';
+import { TokenService, AuthHttp } from '../auth';
 import { loginUrl, signUrl } from '../services/api';
 @Component({
     selector: 'login',
@@ -17,7 +16,7 @@ export class LoginComponent implements OnInit {
     loginurl: string = loginUrl;
     signurl: string = signUrl;
 
-    constructor(private _http: myHttp, private _tokenService: TokenService, private _router: Router) { }
+    constructor(private _http: AuthHttp, private _tokenService: TokenService, private _router: Router) { }
 
     ngOnInit() { }
 

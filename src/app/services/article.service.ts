@@ -2,14 +2,14 @@ import {Injectable} from '@angular/core';
 import {Article} from "../models/Article";
 import 'rxjs/add/operator/toPromise';
 
-import {AuthHttp, myHttp} from '../auth/';
+import {AuthHttp} from '../auth';
 import {articlesUrl} from './api';
 @Injectable()
 export class ArticleService {
 
   private artilcesUrl: string = articlesUrl;
 
-  constructor(private http: myHttp) {
+  constructor(private http: AuthHttp) {
   }
 
   getAllArticle(): Promise<Article[]> {

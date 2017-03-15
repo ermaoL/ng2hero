@@ -4,7 +4,7 @@ import {Observable} from "rxjs/Observable";
 import {TokenService} from "./token.service";
 import { InterceptorService } from './interceptor.service';
 @Injectable()
-export class myHttp extends Http{
+export class AuthHttp extends Http{
 
 
   protected _backend: ConnectionBackend;
