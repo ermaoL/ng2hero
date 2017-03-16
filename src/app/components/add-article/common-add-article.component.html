@@ -1,13 +1,18 @@
 <div class="add-article">
   <div class="form-group">
-    <input type="text" placeholder="文章标题11" [(ngModel)]="title" class="form-control">
-  </div>
-  <div class="form-group">
-    <textarea name="" id="" cols="30" rows="10" placeholder="文章正文11" [(ngModel)]="content" class="form-control"></textarea>
+    <input type="text" placeholder="文章标题" [(ngModel)]="title" class="form-control">
   </div>
 
-  <div [innerHtml]="content|marked" class="fox-markdown"></div>
-
-  <button (click)="addArticle(title, content)" class="primary">新增</button>
+  <tabs>
+    <tab tabTitle="书写">
+      <div class="form-group">
+        <textarea name="" id="" cols="30" rows="10" placeholder="文章正文(支持markdown格式)" [(ngModel)]="content" class="form-control markdown-textarea"></textarea>
+      </div>
+      <button (click)="addArticle(title, content)" class="primary">新增</button>
+    </tab>
+    <tab tabTitle="预览">
+      <div [innerHtml]="content|marked" class="fox-markdown"></div>
+    </tab>
+  </tabs>
 
 </div>

@@ -4,7 +4,8 @@ import {ArticleService} from '../../services/article.service';
 @Component({
   selector: 'common-add-article',
   templateUrl: 'common-add-article.component.html',
-  providers: [ArticleService]
+  providers: [ArticleService],
+  styleUrls: ['common-add-article.component.scss']
 })
 export class CommonAddArticleComponent implements OnInit {
 

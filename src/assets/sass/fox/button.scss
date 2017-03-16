@@ -1,3 +1,4 @@
+@import "../color-config";
 @mixin generateClass($class, $color){
   &.#{$class}{
     @if(lightness($color) > 50) {
@@ -13,15 +14,6 @@
     }
   }
 }
-
-$themes: (
-  "primary": #0099FF,
-  "secondary": #CCCCCC,
-  "success": #00FF99,
-  "info": #00CCFF,
-  "warning": #FF9900,
-  "danger": #FF0033,
-);
 
 button, .fox-btn {
   outline: none;

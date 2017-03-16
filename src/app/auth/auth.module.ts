@@ -13,6 +13,7 @@ import {AuthHttp} from './auth-http';
 import {Token} from './token.model';
 import {InterceptorService} from './interceptor.service';
 import {LoadingComponent} from './loading.component';
+import {MessageComponent} from './message.component';
 
 export function authHttpFactory(xhrBackend: XHRBackend, options: RequestOptions, tokenService: TokenService, interceptor: InterceptorService) {
   return new AuthHttp(xhrBackend, options, tokenService, interceptor);
@@ -20,8 +21,8 @@ export function authHttpFactory(xhrBackend: XHRBackend, options: RequestOptions,
 
 @NgModule({
   imports: [CommonModule, HttpModule],
-  exports: [LoadingComponent],
-  declarations: [LoadingComponent],
+  exports: [LoadingComponent, MessageComponent],
+  declarations: [LoadingComponent, MessageComponent],
   providers: [AuthGuard, AdminGuard, TokenService],
 })
 export class AuthModule {

@@ -1,12 +1,15 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
-import { MarkedPipe } from './marked.pipe';
-import { CommonAddArticleComponent } from '../components/add-article/common-add-article.component';
+import {NgModule} from '@angular/core';
+import {CommonModule} from '@angular/common';
+import {FormsModule} from '@angular/forms';
+import {MarkedPipe} from './marked.pipe';
+import {TabsModule} from '../components/tabs/tabs.module';
+
+import {CommonAddArticleComponent} from '../components/add-article/common-add-article.component';
 @NgModule({
-    imports: [CommonModule, FormsModule],
-    exports: [CommonModule, FormsModule, MarkedPipe, CommonAddArticleComponent],
-    declarations: [MarkedPipe, CommonAddArticleComponent],
-    providers: [],
+  imports: [CommonModule, FormsModule, TabsModule],
+  exports: [CommonModule, FormsModule, TabsModule, MarkedPipe, CommonAddArticleComponent],
+  declarations: [MarkedPipe, CommonAddArticleComponent],
+  providers: [],
 })
-export class SharedModule { }
+export class SharedModule {
+}

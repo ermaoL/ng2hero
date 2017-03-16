@@ -69,10 +69,10 @@ export class AuthHttp extends Http{
   interceptor(observable: Observable<Response>) : Observable<Response> {
     return Observable.create((observer)=>{
 
-      this._interceptor.beforeRequest.emit("开始啦");
+      this._interceptor.beforeRequest.emit("开始请求数据");
 
       observable.subscribe(res => {
-        this._interceptor.afterRequest.emit("结束");
+        this._interceptor.afterRequest.emit("成功啦");
         if(!res.json().success){
           alert(res.json().message);
         }
@@ -81,10 +81,10 @@ export class AuthHttp extends Http{
         if(!err.json().success){
           alert(err.json().message);
         }
-        this._interceptor.afterRequest.emit("结束");
+        this._interceptor.afterRequest.emit("出错啦");
         observer.error(err);
       }, ()=> {
-        this._interceptor.afterRequest.emit("结束");
+        this._interceptor.afterRequest.emit("请求结束");
         observer.complete();
       })
     });

@@ -1,16 +1,33 @@
-.text-center{
-    text-align: center;
+@import "../color-config";
+
+.text-center {
+  text-align: center;
 }
 
-.pull-right{
-    float: right !important;
+.pull-right {
+  float: right !important;
 }
 
-.pull-left{
-    float: left !important;
+.pull-left {
+  float: left !important;
 }
 
-.container{
-    width: 1000px;
-    margin:  0 auto;
+.container {
+  width: 1000px;
+  margin: 0 auto;
+  padding: 0 10px;
 }
+
+@each $key, $value in $themes{
+  .bg-#{$key}{
+    background-color: $value;
+  }
+}
+
+@each $key, $value in $themes{
+  .text-#{$key}{
+    background-color: $value;
+  }
+}
+
+
