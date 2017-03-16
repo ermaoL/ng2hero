@@ -1,0 +1,13 @@
+<div class="add-article">
+  <div class="form-group">
+    <input type="text" placeholder="文章标题11" [(ngModel)]="title" class="form-control">
+  </div>
+  <div class="form-group">
+    <textarea name="" id="" cols="30" rows="10" placeholder="文章正文11" [(ngModel)]="content" class="form-control"></textarea>
+  </div>
+
+  <div [innerHtml]="content|marked" class="fox-markdown"></div>
+
+  <button (click)="addArticle(title, content)" class="primary">新增</button>
+
+</div>
