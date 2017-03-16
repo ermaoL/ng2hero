@@ -1,7 +1,7 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
 import * as marked from 'marked';
-import * as highlightjs from 'highlight.js';
+import {highlightAuto} from 'highlight.js';
 @Pipe({
     name: 'marked'
 })
@@ -19,7 +19,7 @@ export class MarkedPipe implements PipeTransform {
                 smartLists: true,
                 smartypants: false,
                 highlight: function (code) {
-                    return highlightjs.highlightAuto(code).value;
+                    return highlightAuto(code).value;
                 }
             });
           return marked(value);
