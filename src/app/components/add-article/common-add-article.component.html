@@ -6,9 +6,10 @@
   <tabs>
     <tab tabTitle="书写">
       <div class="form-group">
-        <textarea name="" id="" cols="30" rows="10" placeholder="文章正文(支持markdown格式)" [(ngModel)]="content" class="form-control markdown-textarea"></textarea>
+        <textarea placeholder="文章正文(支持markdown格式)" [(ngModel)]="content" class="form-control markdown-textarea"></textarea>
       </div>
-      <button (click)="addArticle(title, content)" class="primary">新增</button>
+      <button (click)="addArticle(title, content)" class="primary" *ngIf="!isEdit">新增</button>
+      <button (click)="editArticle(title, content)" class="primary" *ngIf="isEdit">修改</button>
     </tab>
     <tab tabTitle="预览">
       <div [innerHtml]="content|marked" class="fox-markdown"></div>

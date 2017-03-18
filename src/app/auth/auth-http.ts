@@ -21,7 +21,7 @@ export class AuthHttp extends Http{
    * of {@link BaseRequestOptions} before performing the request.
    */
   request(url: string | Request, options?: RequestOptionsArgs): Observable<Response> {
-    return this.interceptor(super.request(url, options));
+    return this.interceptor(super.request(url, this.mergeOptions(options)));
   };
   /**
    * Performs a request with `get` http method.
@@ -39,31 +39,31 @@ export class AuthHttp extends Http{
    * Performs a request with `put` http method.
    */
   put(url: string, body: any, options?: RequestOptionsArgs): Observable<Response> {
-    return this.interceptor(super.put(url, body, options));
+    return this.interceptor(super.put(url, body, this.mergeOptions(options)));
   };
   /**
    * Performs a request with `delete` http method.
    */
   delete(url: string, options?: RequestOptionsArgs): Observable<Response> {
-    return this.interceptor(super.delete(url, options));
+    return this.interceptor(super.delete(url, this.mergeOptions(options)));
   };
   /**
    * Performs a request with `patch` http method.
    */
   patch(url: string, body: any, options?: RequestOptionsArgs): Observable<Response>{
-    return this.interceptor(super.patch(url, body, options));
+    return this.interceptor(super.patch(url, body, this.mergeOptions(options)));
   };
   /**
    * Performs a request with `head` http method.
    */
   head(url: string, options?: RequestOptionsArgs): Observable<Response>{
-    return this.interceptor(super.head(url, options));
+    return this.interceptor(super.head(url, this.mergeOptions(options)));
   };
   /**
    * Performs a request with `options` http method.
    */
   options(url: string, options?: RequestOptionsArgs): Observable<Response>{
-    return this.interceptor(super.options(url, options));
+    return this.interceptor(super.options(url, this.mergeOptions(options)));
   };
 
   interceptor(observable: Observable<Response>) : Observable<Response> {

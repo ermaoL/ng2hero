@@ -43,4 +43,14 @@ export class ArticleService {
         console.log(err);
       });
   }
+
+  editArticle(id, obj): Promise<any> {
+    return this.http.put(this.artilcesUrl + '/' + id, obj)
+      .toPromise()
+      .then(response => {
+        return response.json();
+      }).catch((err) => {
+        console.log(err);
+      });
+  }
 }

@@ -11,10 +11,11 @@ import { SiderComponent } from './sider/sider.component';
 import { UserComponent } from './user/user.component';
 import { ArticleComponent } from'./article/article.component';
 import { AddArticleComponent } from './article/add-article.component';
+import { EditArticleComponent } from './article/edit-article.component';
 @NgModule({
     imports: [ SharedModule, HttpModule, DashBoardRoutingModule ],
     exports: [],
-    declarations: [DashboardComponent, UserComponent, ArticleComponent, SiderComponent, AddArticleComponent],
+    declarations: [DashboardComponent, UserComponent, ArticleComponent, SiderComponent, AddArticleComponent, EditArticleComponent],
     providers: [],
 })
 export class DashboardModule {

@@ -8,6 +8,7 @@
             <th>标题</th>
             <th>内容</th>
             <th>作者</th>
+            <th>操作</th>
         </tr>
     </thead>
     <tbody>
@@ -16,6 +17,7 @@
             <td>{{article.title}}</td>
             <td class="content">{{article.content}}</td>
             <td>{{article && article.user && article.user.username}}</td>
+            <td><a class="fox-btn primary" [routerLink]="['/dashboard/article/edit/', article._id]">修改</a></td>
         </tr>
     </tbody>
 

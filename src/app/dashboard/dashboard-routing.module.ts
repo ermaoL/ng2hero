@@ -8,6 +8,7 @@ import { AuthGuard, AdminGuard } from '../auth';
 import { UserComponent } from './user/user.component';
 import { ArticleComponent } from './article/article.component';
 import { AddArticleComponent } from './article/add-article.component';
+import { EditArticleComponent } from './article/edit-article.component';
 const routes: Routes = [
   { path: '',
     component: DashboardComponent,
@@ -25,6 +26,10 @@ const routes: Routes = [
       {
         path: 'article/add',
         component: AddArticleComponent,
+      },
+      {
+        path: 'article/edit/:id',
+        component: EditArticleComponent,
       }
     ]
   }
