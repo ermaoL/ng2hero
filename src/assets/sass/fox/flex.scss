@@ -1,13 +1,17 @@
-.fox-flex{
-    display: flex;
-
-    &.all-center{
-        justify-content: center;
-        align-items: center;
-    }
-
-    &.fox-wrap{
-        flex-wrap: wrap;
-    }
+.fox-flex {
+  display: flex;
 }
+.fox-inline-flex {
+  display: inline-flex;
+}
+.all-center {
+  justify-content: center;
+  align-items: center;
+}
+
+.fox-wrap {
+  flex-wrap: wrap;
+}
+
+
 

@@ -1,5 +1,5 @@
 <div class="fox-tabs">
-  <ul class="fox-tabs-title fox-flex all-center">
+  <ul class="fox-tabs-title fox-inline-flex all-center">
     <li *ngFor="let tab of tabs" (click)="selectTab(tab)" [class.active]="tab.active">
       {{tab.title}}
     </li>
