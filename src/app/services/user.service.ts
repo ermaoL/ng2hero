@@ -7,13 +7,13 @@ import { usersUrl, meUrl } from './api';
 @Injectable()
 export class UserService {
 
-  private heroesUrl = usersUrl;
+  private usersUrl = usersUrl;
   private meUrl = meUrl;
   constructor(private http: AuthHttp) {
   }
 
   getAllUser(): Promise<User[]> {
-    return this.http.get(this.heroesUrl)
+    return this.http.get(this.usersUrl)
       .toPromise()
       .then(response => {
         return response.json().users as User[]})
@@ -28,6 +28,15 @@ export class UserService {
         return response.json().user as User;
       }).catch((err) => {
 
+      })
+  }
+
+  changePassword(obj): Promise<any>{
+    return this.http.put(this.usersUrl + '/password', obj).toPromise()
+      .then(response=>{
+        return response.json();
+      }).catch(err=>{
+        console.log(err);
       })
   }
 }

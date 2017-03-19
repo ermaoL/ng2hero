@@ -1,0 +1,12 @@
+<div class="user-setting">
+
+  <form (submit)="changePassword(oldPassword, newPassword, repeatPassword)">
+    <div class="form-group">
+      <input type="password" class="form-control" placeholder="原密码" [(ngModel)]="oldPassword" name="oldPassword">
+      <input type="password" class="form-control" placeholder="新密码" [(ngModel)]="newPassword" name="newPassword">
+      <input type="password" class="form-control" placeholder="重复新密码" [(ngModel)]="repeatPassword" name="repeatPassword">
+      <button class="fox-btn primary">修改</button>
+    </div>
+  </form>
+
+</div>

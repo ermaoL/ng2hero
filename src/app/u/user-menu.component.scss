@@ -1,0 +1,27 @@
+:host{
+  display: flex;
+  margin-top: 20px;
+}
+.user-menu{
+  width: 200px;
+  ul{
+    li{
+      height: 40px;
+      line-height: 40px;
+      border-bottom: 1px solid #eeeeee;
+    }
+  }
+
+  a{
+    display: inline-block;
+    padding: 0 10px;
+    width: 100%;
+    &:hover{
+      color: #FF9900;
+    }
+    &.active{
+      color: #ffffff;
+      background-color: #FF9900;
+    }
+  }
+}

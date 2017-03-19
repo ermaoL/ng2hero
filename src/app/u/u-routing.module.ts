@@ -1,17 +1,41 @@
-import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import {NgModule} from '@angular/core';
+import {Routes, RouterModule} from '@angular/router';
 
-import { UserComponent } from './user.component';
-import { AuthGuard } from '../auth';
+import {AuthGuard} from '../auth';
 
+import {UserComponent} from './user.component';
+import {ProfileComponent} from './profile.component';
+import {UserMenuComponent} from './user-menu.component';
+import {UserSettingComponent} from './user-setting.component';
 const routes: Routes = [
-  { path: '', component: UserComponent, canActivate: [AuthGuard] },
+  {
+    path: '',
+    component: UserComponent,
+    canActivate: [AuthGuard],
+    children: [
+      {
+        path: '',
+        component: UserMenuComponent,
+        children: [
+          {
+            path: 'setting',
+            component: UserSettingComponent
+          },
+          {
+            path: 'profile',
+            component: ProfileComponent
+          }
+        ]
+      },
+
+    ]},
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
 })
-export class UserRoutingModule { }
+export class UserRoutingModule {
+}
 
 export const routedComponents = [UserComponent];
