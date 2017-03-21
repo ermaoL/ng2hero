@@ -6,6 +6,7 @@ import { DashboardComponent } from './dashboard.component';
 import { AuthGuard, AdminGuard } from '../auth';
 
 import { UserComponent } from './user/user.component';
+import { UserAddComponent } from './user/user-add.component';
 import { ArticleComponent } from './article/article.component';
 import { AddArticleComponent } from './article/add-article.component';
 import { EditArticleComponent } from './article/edit-article.component';
@@ -17,6 +18,10 @@ const routes: Routes = [
       {
         path: 'user',
         component: UserComponent,
+      },
+      {
+        path: 'user/add',
+        component: UserAddComponent,
       },
       {
         path: 'article',

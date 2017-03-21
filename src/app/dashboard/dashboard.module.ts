@@ -9,13 +9,14 @@ import { SharedModule } from '../shared/shared.module';
  */
 import { SiderComponent } from './sider/sider.component';
 import { UserComponent } from './user/user.component';
+import { UserAddComponent } from './user/user-add.component';
 import { ArticleComponent } from'./article/article.component';
 import { AddArticleComponent } from './article/add-article.component';
 import { EditArticleComponent } from './article/edit-article.component';
 @NgModule({
     imports: [ SharedModule, HttpModule, DashBoardRoutingModule ],
     exports: [],
-    declarations: [DashboardComponent, UserComponent, ArticleComponent, SiderComponent, AddArticleComponent, EditArticleComponent],
+    declarations: [DashboardComponent, UserComponent, UserAddComponent, ArticleComponent, SiderComponent, AddArticleComponent, EditArticleComponent],
     providers: [],
 })
 export class DashboardModule {
