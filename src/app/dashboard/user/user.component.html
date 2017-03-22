@@ -8,6 +8,7 @@
     <th>ID</th>
     <th>用户名</th>
     <th>创建时间</th>
+    <th>修改时间</th>
   </tr>
   </thead>
   <tbody>
@@ -19,6 +20,9 @@
     </td>
     <td>
       {{hero.created | date:'yyyy-MM-dd HH:mm:ss'}}
+    </td>
+    <td>
+      {{hero.updated | date:'yyyy-MM-dd HH:mm:ss'}}
     </td>
   </tr>
   </tbody>
