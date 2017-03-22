@@ -15,9 +15,9 @@
     </thead>
     <tbody>
         <tr class="article" *ngFor="let article of articles; let i = index;">
-            <td>{{i}}</td>
+            <td>{{i + 1}}</td>
             <td>{{article.title}}</td>
-            <td class="content">{{article.content | ellipsis: 30:20}}</td>
+            <td>{{article.content | ellipsis: 30:20}}</td>
             <td>{{article && article.user && article.user.username}}</td>
             <td>{{article.created | date: 'yyyy-MM-dd HH:mm:ss'}}</td>
             <td>{{article.updated | date: 'yyyy-MM-dd HH:mm:ss'}}</td>
