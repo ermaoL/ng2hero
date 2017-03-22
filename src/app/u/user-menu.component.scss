@@ -17,11 +17,11 @@
     padding: 0 10px;
     width: 100%;
     &:hover{
-      color: #FF9900;
+      color: #0099FF;
     }
     &.active{
-      color: #ffffff;
-      background-color: #FF9900;
+      color: #0099FF;
+      background-color: rgba(#0099FF, .1);
     }
   }
 }
