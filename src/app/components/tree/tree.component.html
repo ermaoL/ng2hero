@@ -1,0 +1,6 @@
+<ul class="tree">
+  <li *ngFor="let item of data">
+    <span>{{item.name}}</span>
+    <tree *ngIf="item.children.length > 0" [data]="item.children"></tree>
+  </li>
+</ul>

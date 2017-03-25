@@ -6,10 +6,11 @@ import {EllipsisPipe} from './ellipsis.pipe';
 import {TabsModule} from '../components/tabs/tabs.module';
 
 import {CommonAddArticleComponent} from '../components/add-article/common-add-article.component';
+import {TreeComponent} from '../components/tree/tree.component';
 @NgModule({
   imports: [CommonModule, FormsModule, TabsModule],
-  exports: [CommonModule, FormsModule, TabsModule, MarkedPipe, EllipsisPipe, CommonAddArticleComponent],
-  declarations: [MarkedPipe, EllipsisPipe, CommonAddArticleComponent],
+  exports: [CommonModule, FormsModule, TabsModule, MarkedPipe, EllipsisPipe, CommonAddArticleComponent, TreeComponent],
+  declarations: [MarkedPipe, EllipsisPipe, CommonAddArticleComponent, TreeComponent],
   providers: [],
 })
 export class SharedModule {
