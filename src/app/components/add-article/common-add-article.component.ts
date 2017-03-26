@@ -24,7 +24,6 @@ export class CommonAddArticleComponent implements OnInit {
   content: String = "";
   articleId: String = "";
   ngOnInit() {
-    console.log(this._route.params);
     this._route.params.switchMap((params: Params) => {
       if(params['id']) {
         this.isEdit = true;
