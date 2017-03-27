@@ -8,6 +8,16 @@
       <div class="form-group">
         <textarea placeholder="文章正文(支持markdown格式)" [(ngModel)]="content" class="form-control markdown-textarea"></textarea>
       </div>
+      <div class="form-group">
+        <label>
+          <input type="checkbox">
+          <span>是否公开</span>
+        </label>
+        <label>
+          <input type="checkbox">
+          <span>是否发布</span>
+        </label>
+      </div>
       <button (click)="addArticle(title, content)" class="primary" *ngIf="!isEdit">新增</button>
       <button (click)="editArticle(title, content)" class="primary" *ngIf="isEdit">修改</button>
     </tab>

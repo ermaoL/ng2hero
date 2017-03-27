@@ -10,6 +10,7 @@ import { UserAddComponent } from './user/user-add.component';
 import { ArticleComponent } from './article/article.component';
 import { AddArticleComponent } from './article/add-article.component';
 import { EditArticleComponent } from './article/edit-article.component';
+import { TagsComponent } from './tag/tags.components';
 const routes: Routes = [
   { path: '',
     component: DashboardComponent,
@@ -35,6 +36,10 @@ const routes: Routes = [
       {
         path: 'article/edit/:id',
         component: EditArticleComponent,
+      },
+      {
+        path: 'tag',
+        component: TagsComponent
       }
     ]
   }

@@ -10,3 +10,4 @@ export const signUrl = apiPrefix + '/signup';
 export const usersUrl = apiPrefix + '/users';
 export const articlesUrl = apiPrefix + '/articles';
 export const meUrl = apiPrefix + '/me';
+export const tagUrl = apiPrefix + '/tags';
