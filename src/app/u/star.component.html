@@ -1,0 +1,8 @@
+<div class="stars">
+  <ul>
+    <li *ngFor="let star of stars">
+      <a href="{{star.url}}">{{star.title}}</a>
+      <span>访问{{star.visits}}次</span>
+    </li>
+  </ul>
+</div>

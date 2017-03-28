@@ -7,6 +7,8 @@ import {UserComponent} from './user.component';
 import {ProfileComponent} from './profile.component';
 import {UserMenuComponent} from './user-menu.component';
 import {UserSettingComponent} from './user-setting.component';
+import {StarComponent} from './star.component';
+
 const routes: Routes = [
   {
     path: '',
@@ -24,6 +26,10 @@ const routes: Routes = [
           {
             path: 'profile',
             component: ProfileComponent
+          },
+          {
+            path: 'star',
+            component: StarComponent
           }
         ]
       },
