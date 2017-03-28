@@ -12,6 +12,20 @@ export class StarComponent implements OnInit {
 
   stars = [];
   ngOnInit() {
+    this.getMyStar();
+  }
+
+  addStar(title, url){
+    this._starService.addStar(title, url).then(res=>{
+      if(res.success) {
+        this.getMyStar();
+      }
+    }).catch(err=>{
+      console.log(err);
+    })
+  }
+
+  getMyStar(){
     this._starService.getMyStars().then(res => {
       this.stars = res.stars;
       console.log(res);
@@ -19,5 +33,4 @@ export class StarComponent implements OnInit {
       console.log(err);
     })
   }
-
 }

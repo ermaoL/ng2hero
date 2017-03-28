@@ -1,7 +1,16 @@
 <div class="stars">
+
+  <form action="">
+    <div class="form-group" (submit)="addStar(title, url)">
+      <input type="text" class="form-control" title="" name="title" [(ngModel)]="title" placeholder="收藏标题">
+      <input type="text" class="form-control" title="" name="url" [(ngModel)]="url" placeholder="收藏链接">
+      <button class="fox-btn primary" (click)="addStar(title, url)">添加收藏</button>
+    </div>
+  </form>
+
   <ul>
     <li *ngFor="let star of stars">
-      <a href="{{star.url}}">{{star.title}}</a>
+      <a href="{{star.url}}" target="_blank">{{star.title}}</a>
       <span>访问{{star.visits}}次</span>
     </li>
   </ul>

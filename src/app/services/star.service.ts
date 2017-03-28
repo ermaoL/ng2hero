@@ -16,4 +16,12 @@ export class StarService {
       })
     }
 
+    addStar(title, url): Promise<any>{
+      return this.http.post(this.starUrl, {title: title, url: url}).toPromise().then(response=>{
+        return response.json()
+      }).catch(err=>{
+        console.log(err);
+      })
+    }
+
 }
