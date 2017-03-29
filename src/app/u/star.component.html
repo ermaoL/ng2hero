@@ -9,8 +9,8 @@
   </form>
 
   <ul>
-    <li *ngFor="let star of stars">
-      <a href="{{star.url}}" target="_blank">{{star.title}}</a>
+    <li *ngFor="let star of stars; let i = index;">
+      <a href="{{star.url}}" target="_blank" (click)="urlClick(star._id, i)">{{star.title}}</a>
       <span>访问{{star.visits}}次</span>
     </li>
   </ul>

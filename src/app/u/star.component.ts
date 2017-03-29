@@ -28,8 +28,16 @@ export class StarComponent implements OnInit {
   getMyStar(){
     this._starService.getMyStars().then(res => {
       this.stars = res.stars;
-      console.log(res);
     }).catch(err => {
+      console.log(err);
+    })
+  }
+
+  urlClick(id, i){
+    console.log(id, i);
+    this._starService.patchVisits(id).then(res=>{
+      this.stars[i] = res.star;
+    }).catch(err=>{
       console.log(err);
     })
   }

@@ -1,3 +1,4 @@
+///<reference path="../auth/auth-http.ts"/>
 import { Injectable } from '@angular/core';
 import { AuthHttp } from '../auth';
 import { starUrl } from './api';
@@ -24,4 +25,11 @@ export class StarService {
       })
     }
 
+    patchVisits(id): Promise<any>{
+      return this.http.patch(this.starUrl + '/' + id, {}).toPromise().then(response=>{
+        return response.json();
+      }).catch(err=>{
+        console.log(err);
+      })
+    }
 }
