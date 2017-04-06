@@ -21,7 +21,7 @@
             <td>{{article.title}}</td>
             <td>{{article.content | ellipsis: 30:20}}</td>
             <td>{{article && article.user && article.user.username}}</td>
-            <td>{{article && article.public ? '是': '否'}}</td>
+            <td>{{article && article.secret ? '否': '是'}}</td>
             <td>{{article && article.publish ? '是': '否'}}</td>
             <td>{{article.created | date: 'yyyy-MM-dd HH:mm:ss'}}</td>
             <td>{{article.updated | date: 'yyyy-MM-dd HH:mm:ss'}}</td>
