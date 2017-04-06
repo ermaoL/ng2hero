@@ -21,7 +21,7 @@ export class AuthHttp extends Http{
    * of {@link BaseRequestOptions} before performing the request.
    */
   request(url: string | Request, options?: RequestOptionsArgs): Observable<Response> {
-    return this.interceptor(super.request(url, this.mergeOptions(options)));
+    return super.request(url, this.mergeOptions(options));
   };
   /**
    * Performs a request with `get` http method.
@@ -63,7 +63,7 @@ export class AuthHttp extends Http{
    * Performs a request with `options` http method.
    */
   options(url: string, options?: RequestOptionsArgs): Observable<Response>{
-    return this.interceptor(super.options(url, this.mergeOptions(options)));
+    return super.options(url, this.mergeOptions(options));
   };
 
   interceptor(observable: Observable<Response>) : Observable<Response> {
