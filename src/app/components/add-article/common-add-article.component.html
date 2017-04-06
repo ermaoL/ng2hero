@@ -10,16 +10,16 @@
       </div>
       <div class="form-group">
         <label>
-          <input type="checkbox">
-          <span>是否公开</span>
-        </label>
-        <label>
-          <input type="checkbox">
+          <input type="checkbox" [(ngModel)]="publish">
           <span>是否发布</span>
         </label>
+        <label>
+          <input type="checkbox" [(ngModel)]="secret">
+          <span>仅自己可见</span>
+        </label>
       </div>
-      <button (click)="addArticle(title, content)" class="primary" *ngIf="!isEdit">新增</button>
-      <button (click)="editArticle(title, content)" class="primary" *ngIf="isEdit">修改</button>
+      <button (click)="addArticle(title, content, publish, secret)" class="primary" *ngIf="!isEdit">新增</button>
+      <button (click)="editArticle(title, content, publish, secret)" class="primary" *ngIf="isEdit">修改</button>
     </tab>
     <tab tabTitle="预览">
       <div [innerHtml]="content|marked" class="fox-markdown"></div>
