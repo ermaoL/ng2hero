@@ -22,6 +22,9 @@ export class CommonAddArticleComponent implements OnInit {
   isEdit: boolean = false;
   title: String = "";
   content: String = "";
+  publish: boolean = true;
+  secret: boolean = false;
+
   articleId: String = "";
   ngOnInit() {
     this._route.params.switchMap((params: Params) => {
@@ -30,15 +33,17 @@ export class CommonAddArticleComponent implements OnInit {
         this.articleId = params['id'];
         return this._articleService.getArticleById(params['id']);
       }else{
-        return Observable.of({title: "", content: ""})
+        return Observable.of({title: "", content: "", publish: true, secret: false})
       }
     }).subscribe(article => {
       this.title = article && article.title;
       this.content = article && article.content;
+      this.publish = article && article.publish;
+      this.secret = article && article.secret;
     });
   }
 
-  addArticle(title, content) {
+  addArticle(title, content, publish, secret) {
     if (!title) {
       alert("title不能为空");
       return;
@@ -47,14 +52,14 @@ export class CommonAddArticleComponent implements OnInit {
       alert("文章内容不能为空");
       return;
     }
-    this._articleService.addArticle({title: title, content: content}).then(data => {
+    this._articleService.addArticle({title: title, content: content, publish: publish, secret: secret}).then(data => {
       if (data.success) {
         this._location.back();
       }
     });
   }
 
-  editArticle(title, content){
+  editArticle(title, content, publish, secret){
     if (!title) {
       alert("title不能为空");
       return;
@@ -64,7 +69,7 @@ export class CommonAddArticleComponent implements OnInit {
       return;
     }
 
-    this._articleService.editArticle( this.articleId, {title: title, content: content}).then(data => {
+    this._articleService.editArticle( this.articleId, {title: title, content: content, publish: publish, secret: secret}).then(data => {
       if (data.success) {
         this._location.back();
       }

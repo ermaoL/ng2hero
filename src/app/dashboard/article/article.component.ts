@@ -14,7 +14,7 @@ export class ArticleComponent implements OnInit {
     constructor(private _articleService: ArticleService) { }
 
     ngOnInit() {
-        this._articleService.getAllArticle()
+        this._articleService.getArticlesForDashboard()
         .then(articles=>{
             this.articles = articles;
         }).catch(err=>{

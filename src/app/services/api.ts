@@ -9,6 +9,7 @@ export const loginUrl = apiPrefix + '/login';
 export const signUrl = apiPrefix + '/signup';
 export const usersUrl = apiPrefix + '/users';
 export const articlesUrl = apiPrefix + '/articles';
+export const dashboardArticlesUrl = apiPrefix + '/dashboard/articles';
 export const meUrl = apiPrefix + '/me';
 export const tagUrl = apiPrefix + '/tags';
 export const starUrl = apiPrefix + '/stars';
