@@ -1,0 +1,9 @@
+<a routerLinkActive="active" routerLink="/article/add" class="fox-btn success">新增文章</a>
+<ul>
+  <li *ngFor="let article of articles; let i = index;">
+    <h3><a [routerLink]="['/u/article/edit', article._id]">{{article.title}}</a></h3>
+    <span>创建: {{article.created | date: 'yyyy-MM-dd HH:mm:ss'}}</span>
+    <span>修改于: {{article.updated | date: 'yyyy-MM-dd HH:mm:ss'}}</span>
+    <span>{{article.secret ? '仅自己可见': '公开'}}</span>
+  </li>
+</ul>

@@ -3,12 +3,13 @@ import {Article} from "../models/Article";
 import 'rxjs/add/operator/toPromise';
 
 import {AuthHttp} from '../auth';
-import {articlesUrl, dashboardArticlesUrl} from './api';
+import {articlesUrl, dashboardArticlesUrl, meUrl} from './api';
 @Injectable()
 export class ArticleService {
 
   private artilcesUrl: string = articlesUrl;
   private dashboardArticlesUrl: string = dashboardArticlesUrl;
+  private meUrl: string = meUrl;
 
   constructor(private http: AuthHttp) {
   }
@@ -27,6 +28,17 @@ export class ArticleService {
 
   getAllArticle(): Promise<Article[]> {
     return this.http.get(this.artilcesUrl)
+      .toPromise()
+      .then(response => {
+        return response.json().articles as Article[]
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }
+
+  getMyArticles(): Promise<Article[]> {
+    return this.http.get(this.meUrl + '/articles')
       .toPromise()
       .then(response => {
         return response.json().articles as Article[]

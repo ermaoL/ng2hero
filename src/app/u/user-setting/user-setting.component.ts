@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {UserService} from '../services/user.service';
+import {UserService} from '../../services/user.service';
 @Component({
   selector: 'user-setting',
   templateUrl: 'user-setting.component.html',

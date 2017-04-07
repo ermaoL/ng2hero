@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {StarService} from '../services/star.service';
+import {StarService} from '../../services/star.service';
 @Component({
   selector: 'star',
   templateUrl: 'star.component.html',
