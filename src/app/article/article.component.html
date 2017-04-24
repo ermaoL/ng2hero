@@ -1,9 +1,13 @@
 <div class="article">
   <div class="list">
-    <div class="article-item" *ngFor="let article of articles" [routerLink]="['/article', article._id]" routerLinkActive="active">
+    <div class="article-item" *ngFor="let article of articles?.docs" [routerLink]="['/article', article._id]" routerLinkActive="active">
       <p>{{article.title}}</p>
       <span class="user">作者: {{article.user && article.user.username || ""}}</span>
       <span>创建于: {{article.created | date:'yyyy-MM-dd HH:mm:ss' }}</span>
     </div>
   </div>
+
+  <app-pagination (pageChange)="pageChange($event)" [page]="articles?.page" [pages]="articles?.pages"></app-pagination>
+
+  <a href="http://www.miitbeian.gov.cn/" class="record">【粤ICP备17001341号】</a>
 </div>

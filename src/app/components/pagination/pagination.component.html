@@ -1,0 +1,13 @@
+<div class="pagination-container">
+  <ul>
+    <li>
+      <a [class]="prev.clz" (click)="prevClick()">{{prev.text}}</a>
+    </li>
+    <li *ngFor="let page of showPages;">
+      <a [class]="page.clz" (click)="pageClick(page.page)">{{page.text}}</a>
+    </li>
+    <li>
+      <a [class]="next.clz" (click)="nextClick()">{{next.text}}</a>
+    </li>
+  </ul>
+</div>

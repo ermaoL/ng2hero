@@ -26,14 +26,10 @@ export class ArticleService {
       });
   }
 
-  getAllArticle(): Promise<Article[]> {
-    return this.http.get(this.artilcesUrl)
-      .toPromise()
-      .then(response => {
-        return response.json().articles as Article[]
-      })
-      .catch((err) => {
-        console.log(err);
+  getAllArticle(page): any {
+    return this.http.get(this.artilcesUrl + '?page=' + page)
+      .map(response => {
+        return response.json();
       });
   }
 

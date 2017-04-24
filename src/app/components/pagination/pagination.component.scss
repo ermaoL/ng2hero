@@ -1,0 +1,32 @@
+.pagination-container{
+  background-color: rgba(255, 255, 255, .5);
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+
+ul{
+  list-style: none;
+  text-align: center;
+  padding: 10px;
+  li{
+    display: inline-block;
+    a{
+      display: inline-block;
+      padding: 5px 10px;
+      cursor: pointer;
+      &.disabled{
+        color: #888888;
+        cursor: not-allowed;
+      }
+      &.active{
+        color: #ffffff;
+        background-color: #0099FF;
+        -webkit-border-radius: 4px;
+        -moz-border-radius: 4px;
+        border-radius: 4px;
+      }
+    }
+  }
+}
