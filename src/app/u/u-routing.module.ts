@@ -10,6 +10,8 @@ import {UserSettingComponent} from './user-setting/user-setting.component';
 import {StarComponent} from './star/star.component';
 import {ArticleComponent} from './article/article.component';
 import {EditArticleComponent} from './article/edit-article.component';
+import {MessageComponent} from "./message/message.component";
+
 const routes: Routes = [
   {
     path: '',
@@ -39,6 +41,10 @@ const routes: Routes = [
           {
             path: 'article/edit/:id',
             component: EditArticleComponent
+          },
+          {
+            path: 'message',
+            component: MessageComponent
           }
         ]
       },

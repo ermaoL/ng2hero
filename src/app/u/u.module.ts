@@ -9,10 +9,11 @@ import { UserSettingComponent } from './user-setting/user-setting.component';
 import { StarComponent } from './star/star.component';
 import { ArticleComponent } from './article/article.component';
 import { EditArticleComponent } from './article/edit-article.component';
+import { MessageComponent } from './message/message.component';
 @NgModule({
     imports: [UserRoutingModule, CommonModule, SharedModule],
     exports: [],
-    declarations: [UserComponent,ProfileComponent, UserMenuComponent, UserSettingComponent, StarComponent, ArticleComponent, EditArticleComponent],
+    declarations: [UserComponent,ProfileComponent, UserMenuComponent, UserSettingComponent, StarComponent, ArticleComponent, EditArticleComponent, MessageComponent],
     providers: [],
 })
 export class UModule { }

@@ -12,13 +12,11 @@ export class UserService {
   constructor(private http: AuthHttp) {
   }
 
-  getAllUser(): Promise<User[]> {
-    return this.http.get(this.usersUrl)
-      .toPromise()
-      .then(response => {
-        return response.json().users as User[]})
-      .catch((err)=>{
-      });
+  getAllUser(page): any {
+    return this.http.get(this.usersUrl + '?page=' + page)
+      .map(response => {
+        return response.json().users
+      })
   }
 
   getMe(): Promise<User>{

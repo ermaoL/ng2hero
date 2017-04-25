@@ -15,11 +15,18 @@ export class UserComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.userService.getAllUser().then(heroes => {
+    this.getUserByPage(1);
+  }
+
+  getUserByPage(page){
+    this.userService.getAllUser(page).subscribe(heroes => {
+      console.log(heroes);
       this.heroes = heroes
     })
-      .catch((err) => {
-      });
+  }
+
+  pageChange(index){
+    this.getUserByPage(index);
   }
 
 }

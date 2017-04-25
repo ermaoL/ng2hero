@@ -11,9 +11,7 @@ import {Article} from '../models/Article';
 export class ArticleComponent implements OnInit {
 
   articles;
-
   constructor(private _articleService: ArticleService) {
-
   }
 
   ngOnInit() {
@@ -23,7 +21,6 @@ export class ArticleComponent implements OnInit {
   getArticleByPage(page) {
     this._articleService.getAllArticle(page)
       .subscribe(data=> {
-        console.log(data);
         if(data.success) {
           this.articles = data.articles;
         }

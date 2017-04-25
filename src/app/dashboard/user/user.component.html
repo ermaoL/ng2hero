@@ -7,17 +7,21 @@
     <th>编号</th>
     <th>ID</th>
     <th>用户名</th>
+    <th>管理员</th>
+    <th>性别</th>
     <th>创建时间</th>
     <th>修改时间</th>
   </tr>
   </thead>
   <tbody>
-  <tr *ngFor="let hero of heroes; let i = index;" class="col-1-4">
+  <tr *ngFor="let hero of heroes?.docs; let i = index;" class="col-1-4">
     <td>{{i+1}}</td>
     <td>{{hero._id}}</td>
     <td class="module hero">
       {{hero.username}}
     </td>
+    <td>{{hero.admin ? '是' : '否'}}</td>
+    <td>{{hero.gender ? '女' : '男'}}</td>
     <td>
       {{hero.created | date:'yyyy-MM-dd HH:mm:ss'}}
     </td>
@@ -27,3 +31,5 @@
   </tr>
   </tbody>
 </table>
+
+<app-pagination (pageChange)="pageChange($event)" [pages]="heroes?.pages" [page]="heroes?.page"></app-pagination>
