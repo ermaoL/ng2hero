@@ -9,7 +9,7 @@ import {UserService} from '../../services/user.service';
 })
 export class UserComponent implements OnInit {
 
-  heroes: User[] = [];
+  heroes;
 
   constructor(private userService: UserService) {
   }
@@ -20,7 +20,6 @@ export class UserComponent implements OnInit {
 
   getUserByPage(page){
     this.userService.getAllUser(page).subscribe(heroes => {
-      console.log(heroes);
       this.heroes = heroes
     })
   }

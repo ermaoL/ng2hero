@@ -16,7 +16,7 @@
         </tr>
     </thead>
     <tbody>
-        <tr class="article" *ngFor="let article of articles; let i = index;">
+        <tr class="article" *ngFor="let article of articles?.docs; let i = index;">
             <td>{{i + 1}}</td>
             <td>{{article.title}}</td>
             <td>{{article.content | ellipsis: 30:20}}</td>
@@ -30,3 +30,5 @@
     </tbody>
 
 </table>
+
+<app-pagination (pageChange)="pageChange($event)" [pages]="articles?.pages" [page]="articles?.page"></app-pagination>

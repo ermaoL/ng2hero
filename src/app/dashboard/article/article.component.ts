@@ -9,15 +9,22 @@ import { Article } from '../../models/Article'
 })
 export class ArticleComponent implements OnInit {
 
-    articles: Article[] = [];
+    articles;
 
     constructor(private _articleService: ArticleService) { }
 
     ngOnInit() {
-        this._articleService.getArticlesForDashboard()
-        .then(articles=>{
-            this.articles = articles;
-        }).catch(err=>{
+        this.getArticlesByPage(1);
+    }
+
+    getArticlesByPage(page) {
+      this._articleService.getArticlesForDashboard(page)
+        .subscribe(articles=>{
+          this.articles = articles;
         })
+    }
+
+    pageChange(page){
+      this.getArticlesByPage(page);
     }
 }

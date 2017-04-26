@@ -15,15 +15,11 @@ export class ArticleService {
   }
 
 
-  getArticlesForDashboard(): Promise<Article[]> {
-    return this.http.get(this.dashboardArticlesUrl)
-      .toPromise()
-      .then(response => {
-        return response.json().articles as Article[]
+  getArticlesForDashboard(page): any{
+    return this.http.get(this.dashboardArticlesUrl + '?page=' + page)
+      .map(response => {
+        return response.json().articles
       })
-      .catch((err) => {
-        console.log(err);
-      });
   }
 
   getAllArticle(page): any {
