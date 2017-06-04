@@ -16,7 +16,7 @@ import { AppRoutingModule } from "./app-routing.module";
  * Feature Modules
  */
 import { CoreModule } from './core/core.module';
-import { AuthModule } from './auth';
+import { AuthModule } from './modules/auth';
 import { UserService } from './services/user.service';
 @NgModule({
   declarations: [

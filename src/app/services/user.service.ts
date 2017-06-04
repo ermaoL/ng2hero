@@ -2,7 +2,7 @@ import {Injectable} from '@angular/core';
 import {User} from "../models/User";
 import 'rxjs/add/operator/toPromise';
 
-import { AuthHttp } from '../auth';
+import { AuthHttp } from '../modules/auth';
 import { usersUrl, meUrl } from './api';
 @Injectable()
 export class UserService {

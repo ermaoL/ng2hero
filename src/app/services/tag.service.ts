@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {AuthHttp} from "../auth";
+import {AuthHttp} from "../modules/auth";
 import {tagUrl} from "./api";
 import 'rxjs/add/operator/toPromise';
 

@@ -4,10 +4,10 @@ import { AppComponent } from './app.component';
 import { AuthService } from './services/auth.service'
 
 import { BannerComponent } from './components/banner/banner.component';
-import {LoadingComponent} from "./auth/loading.component";
+import {LoadingComponent} from "./modules/auth/loading.component";
 import {RouterOutlet} from "@angular/router";
 import {AppRoutingModule} from "./app-routing.module";
-import {AuthModule} from "./auth/auth.module";
+import {AuthModule} from "./modules/auth/auth.module";
 import {CoreModule} from "./core/core.module";
 import {BrowserModule} from "@angular/platform-browser";
 import {APP_BASE_HREF} from "@angular/common";

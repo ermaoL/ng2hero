@@ -4,20 +4,19 @@ import {NgModule} from "@angular/core";
 const routes: Routes = [
   {
     path: 'article',
-    loadChildren: 'app/article/article.module#ArticleModule',
+    loadChildren: 'app/pages/article/article.module#ArticleModule',
   },
   {
     path: 'dashboard',
-    loadChildren: 'app/dashboard/dashboard.module#DashboardModule',
-
+    loadChildren: 'app/pages/dashboard/dashboard.module#DashboardModule',
   },
   {
     path: 'login',
-    loadChildren: 'app/login/login.module#LoginModule',
+    loadChildren: 'app/pages/login/login.module#LoginModule',
   },
   {
     path: 'u',
-    loadChildren: 'app/u/u.module#UModule',
+    loadChildren: 'app/pages/u/u.module#UModule',
   },
   {
     path: '',

@@ -1,6 +1,6 @@
-///<reference path="../auth/auth-http.ts"/>
+///<reference path="../modules/auth/auth-http.ts"/>
 import { Injectable } from '@angular/core';
-import { AuthHttp } from '../auth';
+import { AuthHttp } from '../modules/auth';
 import { starUrl } from './api';
 import 'rxjs/add/operator/toPromise';
 
