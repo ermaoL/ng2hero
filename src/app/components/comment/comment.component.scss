@@ -1,0 +1,31 @@
+.comment-portrait {
+  width: 40px;
+  height: 40px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  border-radius: 20px;
+  border: 1px solid #d9d9d9;
+}
+
+.unlogin-cont {
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  border: 1px solid #d9d9d9;
+  background: #f0f0f0;
+  margin: -50px 0 0 50px;
+  text-align: center;
+  padding: 20px 0;
+}
+
+.comment-login-btn {
+  background: #0099FF;
+  color: #ffffff;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  border: none;
+  width: 90px;
+  text-align: center;
+
+}
